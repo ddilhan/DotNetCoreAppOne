@@ -1,0 +1,42 @@
+﻿
+@model Employee
+
+@{
+    ViewData["Title"] = "EditEmployee";
+}
+
+
+    <div class="container">
+        @using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post, new { id = "editEmployeeForm"}))
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Name</h3>
+                </div>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Name)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Location</h3>
+                </div>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Location)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Age</h3>
+                </div>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Age)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button  type="submit" class="btn btn-info" id="btnInsert">Insert</button>
+                </div>
+            </div>
+        }
+    </div>
